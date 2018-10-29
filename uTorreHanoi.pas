@@ -46,8 +46,8 @@ implementation
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
-  // Inicia a aplicaÁ„o definindos as posiÁıes inicias
-  // final B1 È primeiro bast„o e assim por diantes B2 segundo e B3 terceiro
+  // Inicia a aplica√ß√£o definindos as posi√ß√µes inicias
+  // final B1 √© primeiro bast√£o e assim por diantes B2 segundo e B3 terceiro
   posVermb1       := 1;
   posVerdb1       := 2;
   posAzulb1       := 3;
@@ -57,12 +57,12 @@ begin
   posVermb3       := 0;
   posVerdb3       := 0;
   posAzulb3       := 0;
-  azulMov         := false; // Essa variavel indica se a anilha azul pode se movimentada ou n„o
+  azulMov         := false; // Essa variavel indica se a anilha azul pode se movimentada ou n√£o
   verdMov         := false; // Essa a verdade, quando False ela esta em baixo e true em cima podendo movimentar
   totalMovimentos := 0; // Zera variavel que conta os movimentos
 
-  // PosiÁıes iniciais de cada anilha top indica a distancia da parte superior
-  // e Left o espaÁo da esquerda, como cada anilha tem um tamanho esses valores s„o diferentes
+  // Posi√ß√µes iniciais de cada anilha top indica a distancia da parte superior
+  // e Left o espa√ßo da esquerda, como cada anilha tem um tamanho esses valores s√£o diferentes
   gpVermelho.Top  := 143;
   gpVermelho.Left := 30;
 
@@ -76,15 +76,15 @@ end;
 procedure TForm1.ganhou;
 begin
   // Procedure que verificar se ganhou
-  // CondiÁ„o para ver se no bast„o 3 est„o todos as anilhas nas posiÁıes de piramide
+  // Condi√ß√£o para ver se no bast√£o 3 est√£o todos as anilhas nas posi√ß√µes de piramide
   if (posAzulb3 = 3) and (posVerdb3 = 2) and (posVermb3 = 1) then
   begin
-    // Se sim È exibido a mensagem e depois comeÁa zerar tudo como um inicio de jogo
-    ShowMessage('ParabÈns voce ganhou! Com total de movimentos: ' + IntToStr(totalMovimentos));
+    // Se sim √© exibido a mensagem e depois come√ßa zerar tudo como um inicio de jogo
+    ShowMessage('Parab√©ns voce ganhou! Com total de movimentos: ' + IntToStr(totalMovimentos));
     lblMovimentos.Caption := 'Movimentos: ';
     totalMovimentos := 0;
 
-    // Zera posiÁıes e volta posiÁıes B1(Primeiro Bast„o)
+    // Zera posi√ß√µes e volta posi√ß√µes B1(Primeiro Bast√£o)
     posVermb1       := 1;
     posVerdb1       := 2;
     posAzulb1       := 3;
@@ -99,7 +99,7 @@ begin
     azulMov         := false;
     verdMov         := false;
 
-    // Volta anilhas para primeiro bast„o
+    // Volta anilhas para primeiro bast√£o
     gpAzul.Parent       := GroupBox1;
     gpVerde.Parent      := GroupBox1;
     gpVermelho.Parent   := GroupBox1;
@@ -112,8 +112,8 @@ end;
 
 procedure TForm1.MoverAnilha(anilha: TControl; bastao, posicao: Integer);
 begin
-  // Procedure para movimentar anilhas, o motivo de criar È porque iria repetir mto esses valores
-  // e com a criaÁ„o dela n„o ficaria codigo muito repetido
+  // Procedure para movimentar anilhas, o motivo de criar √© porque iria repetir mto esses valores
+  // e com a cria√ß√£o dela n√£o ficaria codigo muito repetido
   if posicao = 3 then
     begin
       // Esconde anilha
@@ -167,7 +167,7 @@ begin
     end;
   end;
 
-  // Muda bastıes das anilhas
+  // Muda bast√µes das anilhas
   if bastao = 1 then
     begin
       anilha.Parent := GroupBox1;
@@ -188,20 +188,20 @@ end;
 
 procedure TForm1.MovimentarClick(Sender: TObject);
 begin
-// Toda movimentaÁ„o ao clicar no bot„o movimentar
-// Verificar se n„o tem nenhum radio button marcado, se n„o estiver exibe a mensagem
+// Toda movimenta√ß√£o ao clicar no bot√£o movimentar
+// Verificar se n√£o tem nenhum radio button marcado, se n√£o estiver exibe a mensagem
 if rgBastao.ItemIndex = -1 then
 begin
-  Application.MessageBox('Um bast„o deve ser selecionado para movimentar!','AtenÁ„o',MB_ICONEXCLAMATION + MB_OK);
+  Application.MessageBox('Um bast√£o deve ser selecionado para movimentar!','Aten√ß√£o',MB_ICONEXCLAMATION + MB_OK);
 end else if rgAnilha.ItemIndex = -1 then
 begin
-  Application.MessageBox('Uma anilha deve ser selecionado para movimentar!','AtenÁ„o',MB_ICONEXCLAMATION + MB_OK);
+  Application.MessageBox('Uma anilha deve ser selecionado para movimentar!','Aten√ß√£o',MB_ICONEXCLAMATION + MB_OK);
 end;
 
 // Inicio Anilha vermelha
-// ValidaÁıes para identificar qual posiÁ„o a anilha vai
-// faz verificaÁıes para liberar a movimentaÁ„o da anilha verde que de inicio
-// esta em baixo da vermelha e tambÈm tira movimentaÁ„o caso ela for pra cima
+// Valida√ß√µes para identificar qual posi√ß√£o a anilha vai
+// faz verifica√ß√µes para liberar a movimenta√ß√£o da anilha verde que de inicio
+// esta em baixo da vermelha e tamb√©m tira movimenta√ß√£o caso ela for pra cima
 // de algum deles
 if (rgAnilha.ItemIndex = 0) and (rgBastao.ItemIndex = 0) then
 begin
@@ -243,7 +243,7 @@ begin
     posVermb1 := 2;
   end;
 
-// Bast„o 2 faz as mesma verificaÁıes alterando apenas alguns detalhes como posiÁ„o
+// Bast√£o 2 faz as mesma verifica√ß√µes alterando apenas alguns detalhes como posi√ß√£o
 end else if (rgAnilha.ItemIndex = 0) and (rgBastao.ItemIndex = 1) then
 begin
   if (posVerdb2 = 0) and (posAzulb2 = 0) then
@@ -285,7 +285,7 @@ begin
     posVermb2 := 2;
   end ;
 
-// Bast„o 3 igual mudando posiÁ„o
+// Bast√£o 3 igual mudando posi√ß√£o
 end else if (rgAnilha.ItemIndex = 0) and (rgBastao.ItemIndex = 2) then
 begin
   if (posVerdb3 = 0) and (posAzulb3 = 0) then
@@ -328,8 +328,8 @@ begin
   end ;
 
 // Inicio Anilha verde
-// Efetuado o mesmo processo mudando apenas validaÁıes
-// no caso de ele do vermelho estar sobre o verde ele n„o pode movimentar
+// Efetuado o mesmo processo mudando apenas valida√ß√µes
+// no caso de ele do vermelho estar sobre o verde ele n√£o pode movimentar
 end else if (rgAnilha.ItemIndex = 1) and (rgBastao.ItemIndex = 0) then
 begin
   if verdMov = true then
@@ -356,7 +356,7 @@ begin
   end
   else
   begin
-    ShowMessage('Esta peÁa esta em baixo n„o pode ser movimentada!');
+    ShowMessage('Esta pe√ßa esta em baixo n√£o pode ser movimentada!');
   end;
 end else if (rgAnilha.ItemIndex = 1) and (rgBastao.ItemIndex = 1) then
 begin
@@ -385,7 +385,7 @@ begin
   end
   else
   begin
-    ShowMessage('Esta peÁa esta em baixo n„o pode ser movimentada!');
+    ShowMessage('Esta pe√ßa esta em baixo n√£o pode ser movimentada!');
   end;
 end else if (rgAnilha.ItemIndex = 1) and (rgBastao.ItemIndex = 2) then
 begin
@@ -414,7 +414,7 @@ begin
   end
   else
   begin
-    ShowMessage('Esta peÁa esta em baixo n„o pode ser movimentada!');
+    ShowMessage('Esta pe√ßa esta em baixo n√£o pode ser movimentada!');
   end;
 
 // Inicio Anilha azul
@@ -436,6 +436,7 @@ begin
     begin
       msgAnilhaMaior();
     end ;
+<<<<<<< .merge_file_a07608
   end
   else
   begin
@@ -463,6 +464,27 @@ begin
   else
   begin
     ShowMessage('Esta peÁa esta em baixo n„o pode ser movimentada!');
+=======
+  end;    
+end else if (rgAnilha.ItemIndex = 2) and (rgBastao.ItemIndex = 1) then
+begin
+  if azulMov = true then
+  begin
+    if (posVermb2 = 0) and (posVerdb2 = 0) then
+    begin
+      posAzulb1 := 0;
+      posAzulb3 := 0;
+      MoverAnilha(gpAzul, 2, 3);
+      azulMov   := true;
+      posAzulb2 := 3;
+    end else if (posVermb2 = 2) or (posVerdb2 = 2) then
+    begin
+      msgAnilhaMaior();
+    end else if (posVermb2 = 3) or (posVerdb2 = 3) then
+    begin
+      msgAnilhaMaior();
+    end ;
+>>>>>>> .merge_file_a06836
   end;
 end else if (rgAnilha.ItemIndex = 2) and (rgBastao.ItemIndex = 2) then
 begin
@@ -478,12 +500,17 @@ begin
     end else if (posVermb3 = 2) or (posVerdb3 = 2) then
     begin
       msgAnilhaMaior();
+<<<<<<< .merge_file_a07608
     end else if (posVermb3 = 3) or (posVerdb3 = 3) then
     begin
       msgAnilhaMaior();
     end;
   end
   else
+=======
+   end;
+  end else if (posVermb3 = 3) or (posVerdb3 = 3) then
+>>>>>>> .merge_file_a06836
   begin
     ShowMessage('Esta peÁa esta em baixo n„o pode ser movimentada!');
   end;
@@ -495,8 +522,8 @@ end;
 
 procedure TForm1.msgAnilhaMaior;
 begin
-  // Criado uma procedure para enviar mensagem quando anilhar for maior e n„o pode ficar em cima
-  ShowMessage('N„o pode mover peÁa maior em cima de uma menor!');
+  // Criado uma procedure para enviar mensagem quando anilhar for maior e n√£o pode ficar em cima
+  ShowMessage('N√£o pode mover pe√ßa maior em cima de uma menor!');
 end;
 
 end.

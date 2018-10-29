@@ -21,7 +21,7 @@ object Form1: TForm1
   object lblMovimentos: TLabel
     Left = 341
     Top = 207
-    Width = 148
+    Width = 64
     Height = 13
     Caption = 'Movimentos: '
   end

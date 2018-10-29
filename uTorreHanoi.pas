@@ -420,51 +420,72 @@ begin
 // Inicio Anilha azul
 end else if (rgAnilha.ItemIndex = 2) and (rgBastao.ItemIndex = 0) then
 begin
-  if (posVermb1 = 0) and (posVerdb1 = 0) then
+  if azulMov = true then
   begin
-    posAzulb2 := 0;
-    posAzulb3 := 0;
-    MoverAnilha(gpAzul, 1, 3);
-    azulMov   := true;
-    posAzulb1 := 3;
-  end else if (posVermb1 = 2) or (posVerdb1 = 2) then
+    if (posVermb1 = 0) and (posVerdb1 = 0) then
+    begin
+      posAzulb2 := 0;
+      posAzulb3 := 0;
+      MoverAnilha(gpAzul, 1, 3);
+      azulMov   := true;
+      posAzulb1 := 3;
+    end else if (posVermb1 = 2) or (posVerdb1 = 2) then
+    begin
+      msgAnilhaMaior();
+    end else if (posVermb1 = 3) or (posVerdb1 = 3) then
+    begin
+      msgAnilhaMaior();
+    end ;
+  end
+  else
   begin
-    msgAnilhaMaior();
-  end else if (posVermb1 = 3) or (posVerdb1 = 3) then
-  begin
-    msgAnilhaMaior();
-  end ;
+    ShowMessage('Esta peça esta em baixo não pode ser movimentada!');
+  end;
 end else if (rgAnilha.ItemIndex = 2) and (rgBastao.ItemIndex = 1) then
 begin
-  if (posVermb2 = 0) and (posVerdb2 = 0) then
+  if azulMov = true then
   begin
-    posAzulb1 := 0;
-    posAzulb3 := 0;
-    MoverAnilha(gpAzul, 2, 3);
-    azulMov   := true;
-    posAzulb2 := 3;
-  end else if (posVermb2 = 2) or (posVerdb2 = 2) then
+    if (posVermb2 = 0) and (posVerdb2 = 0) then
+    begin
+      posAzulb1 := 0;
+      posAzulb3 := 0;
+      MoverAnilha(gpAzul, 2, 3);
+      azulMov   := true;
+      posAzulb2 := 3;
+    end else if (posVermb2 = 2) or (posVerdb2 = 2) then
+    begin
+      msgAnilhaMaior();
+    end else if (posVermb2 = 3) or (posVerdb2 = 3) then
+    begin
+      msgAnilhaMaior();
+    end ;
+  end
+  else
   begin
-    msgAnilhaMaior();
-  end else if (posVermb2 = 3) or (posVerdb2 = 3) then
-  begin
-    msgAnilhaMaior();
-  end ;
+    ShowMessage('Esta peça esta em baixo não pode ser movimentada!');
+  end;
 end else if (rgAnilha.ItemIndex = 2) and (rgBastao.ItemIndex = 2) then
 begin
-  if (posVermb3 = 0) and (posVerdb3 = 0) then
+  if azulMov = true then
   begin
-    posAzulb1 := 0;
-    posAzulb2 := 0;
-    MoverAnilha(gpAzul, 3, 3);
-    azulMov   := true;
-    posAzulb3 := 3;
-  end else if (posVermb3 = 2) or (posVerdb3 = 2) then
+    if (posVermb3 = 0) and (posVerdb3 = 0) then
+    begin
+      posAzulb1 := 0;
+      posAzulb2 := 0;
+      MoverAnilha(gpAzul, 3, 3);
+      azulMov   := true;
+      posAzulb3 := 3;
+    end else if (posVermb3 = 2) or (posVerdb3 = 2) then
+    begin
+      msgAnilhaMaior();
+    end else if (posVermb3 = 3) or (posVerdb3 = 3) then
+    begin
+      msgAnilhaMaior();
+    end;
+  end
+  else
   begin
-    msgAnilhaMaior();
-  end else if (posVermb3 = 3) or (posVerdb3 = 3) then
-  begin
-    msgAnilhaMaior();
+    ShowMessage('Esta peça esta em baixo não pode ser movimentada!');
   end;
 end;
 
